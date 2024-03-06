@@ -1,9 +1,9 @@
-import PlayerControls from "../components/PlayerControls";
-import TrackList from "../components/TrackList";
+import { useState } from "react";
 import sinisterMusic from "../assets/sinister.mp3";
 import stompingMusic from "../assets/stomp.mp3";
 import underwaterMusic from "../assets/underwater.mp3";
-import { useState } from "react";
+import PlayerControls from "../components/PlayerControls";
+import TrackList from "../components/TrackList";
 import { MusicContext } from "../contexts/MusicContext";
 
 const Home = () => {
@@ -11,21 +11,23 @@ const Home = () => {
     audioPlayer: new Audio(),
     tracks: [
       {
-        name: "Sinister music",
+        name: "Sinister Music",
         file: sinisterMusic,
       },
       {
-        name: "Stomping music",
+        name: "Stomping Music",
         file: stompingMusic,
       },
       {
-        name: "Underwater music",
+        name: "Underwater Music",
         file: underwaterMusic,
       },
     ],
     currentTrackIndex: 0,
     isPlaying: false,
   });
+
+  console.log("State: ", state);
 
   return (
     <div>
